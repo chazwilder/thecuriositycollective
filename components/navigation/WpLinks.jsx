@@ -3,7 +3,7 @@ const WpLinks = async () => {
   const navLinks = await res.json();
 
   return (
-    <div className="flex flex-row w-full h-16 items-center justify-center gap-6 p-8 border">
+    <div className="flex flex-row w-full h-16 items-center justify-center gap-6 p-8">
     {navLinks.map((link, index) => {
         return (
             <a className="uppercase" key={index} href={link.node.url} target="_blank" rel="noopener noreferrer">{link.node.label}</a>
