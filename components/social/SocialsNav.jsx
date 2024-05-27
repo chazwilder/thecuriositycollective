@@ -29,7 +29,7 @@ const SocialsNav = ({ socialLinks }) => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <IconComponent className="cursor-pointer" size={24} />
+            <IconComponent className="cursor-pointer transform transition-transform duration-500 ease-in-out hover:-translate-y-1" size={24} />
           </a>
         );
       })}
