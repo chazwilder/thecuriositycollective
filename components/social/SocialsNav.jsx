@@ -1,15 +1,40 @@
-import React from 'react'
-import { FaLinkedinIn, FaGithub, FaGlobe } from "react-icons/fa";
+import { FaGithub, FaGlobe, FaLinkedinIn } from "react-icons/fa";
 
-const SocialsNav = () => {
+const iconMap = {
+  FaLinkedinIn: FaLinkedinIn,
+  FaGithub: FaGithub,
+  FaGlobe: FaGlobe,
+};
+
+export async function getServerSideProps() {
+    const res = await fetch("/api/v2/links");
+    const socialLinks = await res.json();
+  
+    return {
+      props: {
+        socialLinks,
+      },
+    };
+  }
+
+const SocialsNav = ({ socialLinks }) => {
   return (
-    <div className='flex flex-row gap-4'>
-        <FaLinkedinIn className=' cursor-pointer' size={24}  />
-        <FaGithub className=' cursor-pointer' size={24}  />
-        <FaGlobe className=' cursor-pointer' size={24}  />
-
+    <div className="flex flex-row gap-6">
+      {socialLinks.map((link, index) => {
+        const IconComponent = iconMap[link.reactIcon];
+        return (
+          <a
+            key={index}
+            href={link.url}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <IconComponent className="cursor-pointer" size={24} />
+          </a>
+        );
+      })}
     </div>
-  )
-}
+  );
+};
 
-export default SocialsNav
+export default SocialsNav;
