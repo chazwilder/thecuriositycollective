@@ -2,6 +2,7 @@ import Footer from "@/components/Footer";
 import NavBar from "@/components/NavBar";
 import "./globals.css";
 import SocialsNavServer from "./socialsServer";
+import WpLinks from "@/components/navigation/WpLinks";
 
 export const metadata = {
   title: "The Curiousity Collective",
@@ -12,10 +13,11 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className="font-atyp flex min-h-screen flex-col justify-between w-full h-full">
-        <div className="flex flex-col grow mx-auto justify-between max-w-9xl w-full h-full border">
+        <div className="flex flex-col grow mx-auto justify-between max-w-9xl w-full h-full">
           <NavBar>
             <SocialsNavServer />
           </NavBar>
+          <WpLinks />
           {children}
           <Footer />
         </div>
