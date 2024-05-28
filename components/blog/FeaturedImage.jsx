@@ -2,7 +2,7 @@ import Image from "next/image";
 
 const FeaturedImage = ({ post }) => {
   return (
-    <div className="relative w-4/5 h-full mx-auto">
+    <div className="relative w-full h-full mx-auto flex flex-col flex-1">
       <Image
         src={post.featuredImage.node.link}
         alt="A photo of a dog"
