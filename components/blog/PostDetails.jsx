@@ -1,7 +1,6 @@
 import Image from "next/image";
 
 const PostDetails = ({ post }) => {
-  console.log(post);
   const readTime = (content) => {
     const wordCount = content.replace(/<[^>]+>/g, "").split(" ").length;
     return Math.ceil(wordCount / 200);
