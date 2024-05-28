@@ -10,8 +10,9 @@ const FeaturedImage = ({ post }) => {
         style={{
           objectFit: "cover",
         }}
-        className="rounded-xl"
+        className="rounded-xl shadow-lg"
       />
+      <p className="text-2xl absolute left-8 bottom-8 bg-white p-2">{post.title}</p>
     </div>
   );
 };

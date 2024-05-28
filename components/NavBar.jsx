@@ -3,9 +3,9 @@ import { PiMagnifyingGlassThin } from "react-icons/pi";
 
 const NavBar = ({ children }) => {
   return (
-    <div className="w-full max-w-7xl flex flex-row items-center justify-between mx-auto p-12 pt-20">
+    <div className="w-full max-w-7xl flex flex-row items-center justify-between mx-auto p-12 pt-20 relative">
       {children}
-      <div>
+      <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
         <p
           className={`text-9xl cursor-pointer inline-block font-lovtony text-black leading-[.3] overflow-hidden ${levitate}`}
         >
